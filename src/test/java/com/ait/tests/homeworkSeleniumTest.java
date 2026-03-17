@@ -24,20 +24,20 @@ public class homeworkSeleniumTest {
 
     @Test
     public void findElementById(){
-        WebElement city = driver.findElement(By.id("h1"));
+        WebElement city = driver.findElement(By.id("bar-notification"));
         System.out.println(city.getDomAttribute("id"));
     }
 
     @Test
     public void findElementByClassName(){
-        WebElement search = driver.findElement(By.className("navigation-link"));
+        WebElement search = driver.findElement(By.className("bar-notification"));
         System.out.println(search.getText());
         System.out.println(search.getDomAttribute("class"));
 
     }
     @Test
     public void findElementByTagName(){
-        WebElement element = driver.findElement(By.tagName("h1"));
+        WebElement element = driver.findElement(By.tagName("a"));
         System.out.println(element.getText());
     }
 
