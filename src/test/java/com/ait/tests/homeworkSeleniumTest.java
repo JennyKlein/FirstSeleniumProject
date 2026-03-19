@@ -41,6 +41,7 @@ public class homeworkSeleniumTest {
         System.out.println(element.getText());
     }
 
+
     @AfterMethod(enabled = false)
     public void tearDown(){
         driver.quit();

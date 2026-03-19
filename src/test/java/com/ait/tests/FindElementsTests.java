@@ -68,6 +68,11 @@ public class FindElementsTests {
         System.out.println(search.getDomAttribute("class"));
 
     }
+    @Test
+    public void findElementByLinkText(){
+        WebElement linkText = driver.findElement(By.linkText("Let car work"));
+        System.out.println(linkText.getText());
+    }
 
 
     @AfterMethod(enabled = false)
