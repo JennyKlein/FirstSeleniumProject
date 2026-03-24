@@ -112,6 +112,15 @@ public class FindElementsTests {
         //composite tag + class + class
         driver.findElement(By.cssSelector("a.navigation-link.active"));
 
+        //one step above(один шаг вниз)
+        driver.findElement(By.cssSelector(".logo>img"));
+
+        //<tag> or <class> or <id>:nth-child(n)
+        WebElement feedback = driver.findElement(By.cssSelector(".feedback-card:nth-child(1)"));
+        System.out.println(feedback.getText());
+        WebElement search = driver.findElement(By.cssSelector(".navigation-link:nth-child(2)"));
+        System.out.println(search.getText());
+
 
     }
 
