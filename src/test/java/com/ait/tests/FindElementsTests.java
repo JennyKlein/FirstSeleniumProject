@@ -72,6 +72,47 @@ public class FindElementsTests {
     public void findElementByLinkText(){
         WebElement linkText = driver.findElement(By.linkText("Let car work"));
         System.out.println(linkText.getText());
+
+        WebElement linkText2 = driver.findElement(By.linkText("Los Angeles"));
+        System.out.println(linkText2.getText());
+    }
+    @Test
+    public void findElementByPartialLinkText(){
+        WebElement partialLinkText = driver.findElement(By.partialLinkText("work"));
+        System.out.println(partialLinkText.getText());
+    }
+
+    @Test
+    public void findElemenByCssSelector(){
+        ////driver.findElement(By.tagName("h1"));
+        //tagName h1-> css "h1"
+        driver.findElement(By.cssSelector("h1"));
+
+        //driver.findElement(By.id("city"));
+        //id = 'city' ->css #city
+        driver.findElement(By.cssSelector("#city"));
+
+        //driver.findElement(By.className("telephone"));
+        //className = 'telephone' -> css .telephone
+        driver.findElement(By.cssSelector(".telephone"));
+
+
+        //contains -> *
+        driver.findElement(By.cssSelector("[class*='container']"));
+
+        //start -> ^
+        driver.findElement(By.cssSelector("[class^='input']"));
+
+        //end to -> $
+        driver.findElement(By.cssSelector("[class$='icon']"));
+
+        //[key='value']
+        driver.findElement(By.cssSelector("[placeholder='City']"));
+
+        //composite tag + class + class
+        driver.findElement(By.cssSelector("a.navigation-link.active"));
+
+
     }
 
 
