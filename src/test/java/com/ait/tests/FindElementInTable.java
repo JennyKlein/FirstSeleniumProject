@@ -1,11 +1,15 @@
 package com.ait.tests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.List;
 
 public class FindElementInTable {
 
@@ -17,9 +21,40 @@ public class FindElementInTable {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
-    @AfterMethod
-    public void tearDriver(){
-        driver.quit();
+
+    @Test
+    public void tableCssSelector(){
+        //получить количество рядов
+        List<WebElement> rows = driver.findElements(By.cssSelector("tr"));
+        System.out.println(rows.size());
+
+        for (int i = 0; i < rows.size(); i++) {
+            System.out.println(rows.get(i).getText());
+        }
+        System.out.println("**************************************************");
+
+        for (WebElement element:rows){
+            System.out.println(element.getText());
+        }
+        System.out.println("**************************************************");
+
+        //get rows
+        WebElement mexico = driver.findElement(By.cssSelector("#customers tr:nth-child(4)"));
+        System.out.println(mexico.getText());
+        //get row 4 last element(получить ряд и последний элемент)
+        WebElement country = driver.findElement(By.cssSelector("#customers tr:nth-child(4) td:nth-child(3)"));
+        //WebElement country = driver.findElement(By.cssSelector("#customers tr:nth-child(4) td:last-child"));
+        System.out.println(country.getText());
+
+
+
+
     }
+
+
+@AfterMethod (enabled = false)
+public void tearDown(){
+   driver.quit();
+}
 
 }
