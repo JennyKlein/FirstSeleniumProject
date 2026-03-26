@@ -47,8 +47,13 @@ public class FindElementInTable {
         System.out.println(country.getText());
 
 
-
-
+    }
+//xPath
+    @Test
+    public void findElementByxPath(){
+        // //tag[@key='value']
+        // //tag[1]
+        // //tag[text()='Los Angeles']
     }
 
 
