@@ -131,6 +131,18 @@ public class FindElementsTests {
         // //tag[1]
         // //tag[text()='Los Angeles']
 
+       // driver.findElement(By.cssSelector("h1"));
+        driver.findElement(By.xpath("//h1"));
+
+        //driver.findElement(By.cssSelector("#city"));
+        driver.findElement(By.xpath("//*[@id='city']"));
+
+        //driver.findElement(By.cssSelector(".telephone"));
+        driver.findElement(By.xpath("//*[@class='telephone']"));
+
+       // driver.findElement(By.cssSelector("[class*='container']"));
+        driver.findElement(By.xpath("//*[class*='container']"));
+
     }
 
 
