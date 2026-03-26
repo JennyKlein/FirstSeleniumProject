@@ -124,13 +124,20 @@ public class FindElementsTests {
 
     }
 
+    //xPath
+    @Test
+    public void findElementByxPath() {
+        // //tag[@key='value']
+        // //tag[1]
+        // //tag[text()='Los Angeles']
 
-    @AfterMethod(enabled = false)
-    public void tearDown(){
-        driver.quit();
     }
 
 
+        @AfterMethod(enabled = false)
+        public void tearDown () {
+            driver.quit();
+        }
 
 
-}
+    }
