@@ -2,6 +2,7 @@ package com.ait.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -29,8 +30,40 @@ public class FindDemoWebShopElement {
         //search input
         driver.findElement(By.cssSelector("#small-searchterms"));
 
-    }
 
+
+        //className
+        WebElement class_heder_logo = driver.findElement(By.cssSelector(".header-logo"));
+        System.out.println(class_heder_logo.getText());
+
+        //contains -> *    поиск по определёному слову из класса
+        WebElement wrapper = driver.findElement(By.cssSelector("[class*='wrapper']"));
+        System.out.println(wrapper.getText());
+
+        //end to -> $ по конечному слову из класса
+        WebElement service = driver.findElement(By.cssSelector("[class$='service']"));
+        System.out.println(service.getText());
+
+
+        //ID
+        WebElement topcarlink = driver.findElement(By.cssSelector("#topcartlink"));
+        System.out.println(topcarlink.getText());
+
+        //[key='value']
+        WebElement logo = driver.findElement(By.cssSelector("img[alt='Tricentis Demo Web Shop']"));
+        System.out.println(logo.getText());
+
+
+        //<tag> or <class> or <id>:nth-child(n)
+        WebElement information = driver.findElement(By.cssSelector(".information:nth-child(1)"));
+        System.out.println(information.getText());
+
+        WebElement wishlist = driver.findElement(By.cssSelector("[href='/wishlist']"));
+        System.out.println(wishlist.getText());
+
+
+
+    }
     @Test
     public void findElementByxPath(){
         //driver.findElement(By.cssSelector("[href='/register']"));
@@ -46,6 +79,20 @@ public class FindDemoWebShopElement {
         //("[class*='wrapper']")
         driver.findElement(By.xpath("//*[contains(@class,'wrapper')]"));
 
+        //driver.findElement(By.cssSelector("[class$='service']"));
+        driver.findElement(By.xpath("//*[contains(@class,'service')]"));
+
+        //driver.findElement(By.cssSelector("#topcartlink"));
+        driver.findElement(By.xpath("//*[@id='topcartlink']"));
+
+        //driver.findElement(By.cssSelector("img[alt='Tricentis Demo Web Shop']"));
+        driver.findElement(By.xpath("//img[@alt='Tricentis Demo Web Shop']"));
+
+        //driver.findElement(By.cssSelector(".information:nth-child(1)"));
+        driver.findElement(By.xpath("//*[contains(@class,'information')][1]"));
+
+        //driver.findElement(By.cssSelector("[href='/wishlist']"));
+        driver.findElement(By.xpath("//*[@href='/wishlist']"));
 
     }
 
