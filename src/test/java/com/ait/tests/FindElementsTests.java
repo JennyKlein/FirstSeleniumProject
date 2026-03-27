@@ -140,8 +140,25 @@ public class FindElementsTests {
         //driver.findElement(By.cssSelector(".telephone"));
         driver.findElement(By.xpath("//*[@class='telephone']"));
 
-       // driver.findElement(By.cssSelector("[class*='container']"));
-        driver.findElement(By.xpath("//*[class*='container']"));
+        //driver.findElement(By.cssSelector("[class*='container']"));
+       // driver.findElement(By.xpath("//*[@class*='container']"));
+
+        ///driver.findElement(By.cssSelector("[class*='container']"));
+        //WebElement element = driver.findElement(By.xpath("//p[contains(text(),'best services')]"));
+        WebElement element = driver.findElement(By.xpath("//p[contains(.,'best services')]"));
+        System.out.println(element.getText());
+
+        //equals text
+       // driver.findElement(By.xpath("//*[text()='Find your car now!']"));
+
+        driver.findElement(By.xpath("//*[.='Find your car now!']"));
+
+        //driver.findElement(By.cssSelector(".logo>img"));
+        driver.findElement(By.xpath("//*[@class='logo']/img"));
+
+
+        //cssSelector - >   div>a         //xPath->   //div/a
+//cssSelector - > div a               //xPath-> //div//a
 
     }
 

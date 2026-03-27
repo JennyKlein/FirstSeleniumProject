@@ -31,6 +31,25 @@ public class FindDemoWebShopElement {
 
     }
 
+    @Test
+    public void findElementByxPath(){
+        //driver.findElement(By.cssSelector("[href='/register']"));
+        driver.findElement(By.xpath("//*[@href='/register']"));
+
+        //driver.findElement(By.cssSelector("#small-searchterms"));
+        driver.findElement(By.xpath("//*[@id='small-searchterms']"));
+
+
+        //By.cssSelector(*.header-logo)
+        driver.findElement(By.xpath("//*[@class='header-logo']"));
+
+        //("[class*='wrapper']")
+        driver.findElement(By.xpath("//*[contains(@class,'wrapper')]"));
+
+
+    }
+
+
     @AfterMethod
     public void tearDown(){
         driver.quit();
